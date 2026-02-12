@@ -2,6 +2,12 @@
 
 Репозиторий демонстрирует, что даже `Hello, World!` можно довести до уровня, где на него уже страшно смотреть без архитектурной диаграммы.
 
+![Tests](https://img.shields.io/badge/tests-15%20passed-brightgreen)
+![Coverage](https://img.shields.io/badge/coverage-95.16%25-brightgreen)
+![Type%20Check](https://img.shields.io/badge/mypy-strict-blue)
+![Lint](https://img.shields.io/badge/ruff-enabled-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 ## Зачем это
 
 Проект сделан как ироничный пример «сверхдисциплины»:
@@ -74,6 +80,13 @@ uv run pytest
 pre-commit run --all-files
 ```
 
+Альтернатива через `Makefile`:
+
+```bash
+make check-all
+make pre-commit
+```
+
 ## Архитектура
 
 Структура пакета:
@@ -97,3 +110,11 @@ pre-commit run --all-files
 ## Почему это полезно
 
 Когда проект начнёт расти (например, появится сборка приложения или дополнительные адаптеры), текущая структура уже готова к расширению без переписывания «с нуля».
+
+## Документы проекта
+
+- [Contribution guide](CONTRIBUTING.md)
+- [Architecture Decision Record](docs/adr/0001-architecture.md)
+- [Changelog](CHANGELOG.md)
+- [License (MIT)](LICENSE)
+- [Code owners](.github/CODEOWNERS)
