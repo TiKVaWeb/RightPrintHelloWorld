@@ -8,7 +8,7 @@
 ![Lint](https://img.shields.io/badge/ruff-enabled-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![CI](https://github.com/TiKVaWeb/RightPrintHelloWorld/actions/workflows/ci.yml/badge.svg)
-![Release](https://github.com/TiKVaWeb/RightPrintHelloWorld/actions/workflows/release.yml/badge.svg)
+![Release](https://img.shields.io/github/v/release/TiKVaWeb/RightPrintHelloWorld?display_name=tag)
 
 ## Зачем это
 
