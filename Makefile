@@ -1,4 +1,5 @@
-PYTHON := .venv/bin/python
+PYTHON ?= $(if $(wildcard .venv/bin/python),.venv/bin/python,python3)
+PRECOMMIT ?= $(if $(wildcard .venv/bin/pre-commit),.venv/bin/pre-commit,pre-commit)
 
 .PHONY: bootstrap lint format-check typecheck test check-all pre-commit
 
@@ -20,4 +21,4 @@ test:
 check-all: lint format-check typecheck test
 
 pre-commit:
-	.venv/bin/pre-commit run --all-files
+	$(PRECOMMIT) run --all-files
