@@ -1,0 +1,60 @@
+[build-system]
+requires = ["hatchling>=1.26.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "print-hello-world"
+version = "0.1.0"
+description = "Enterprise-grade Hello World, потому что можем."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "mypy>=1.15.0",
+    "pre-commit>=4.1.0",
+    "pytest>=8.3.4",
+    "pytest-cov>=6.0.0",
+    "ruff>=0.9.7",
+]
+
+[project.scripts]
+print-hello-world = "print_hello_world.cli:run"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.15.0",
+    "pre-commit>=4.1.0",
+    "pytest>=8.3.4",
+    "pytest-cov>=6.0.0",
+    "ruff>=0.9.7",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/print_hello_world"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["B", "C4", "E", "F", "I", "RUF", "SIM", "UP", "W"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+warn_unused_ignores = true
+pretty = true
+show_error_codes = true
+mypy_path = "src"
+files = ["src", "tests"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-markers --strict-config --cov=print_hello_world --cov-fail-under=95 --cov-report=term-missing"
+testpaths = ["tests"]
