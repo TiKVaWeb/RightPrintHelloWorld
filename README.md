@@ -3,10 +3,12 @@
 Репозиторий демонстрирует, что даже `Hello, World!` можно довести до уровня, где на него уже страшно смотреть без архитектурной диаграммы.
 
 ![Tests](https://img.shields.io/badge/tests-15%20passed-brightgreen)
-![Coverage](https://img.shields.io/badge/coverage-95.16%25-brightgreen)
+![Coverage Gate](https://img.shields.io/badge/coverage_gate-95%25-brightgreen)
 ![Type%20Check](https://img.shields.io/badge/mypy-strict-blue)
 ![Lint](https://img.shields.io/badge/ruff-enabled-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
+![CI](https://github.com/TiKVaWeb/RightPrintHelloWorld/actions/workflows/ci.yml/badge.svg)
+![Release](https://github.com/TiKVaWeb/RightPrintHelloWorld/actions/workflows/release.yml/badge.svg)
 
 ## Зачем это
 
@@ -86,6 +88,12 @@ pre-commit run --all-files
 make check-all
 make pre-commit
 ```
+
+## CI и релизы
+
+- CI запускается на каждый `push` в `main` и на каждый `pull request`.
+- Релиз создаётся автоматически при пуше тега формата `v*` (например, `v0.1.0`).
+- Оба workflow прогоняют полный quality gate перед публикацией.
 
 ## Архитектура
 
